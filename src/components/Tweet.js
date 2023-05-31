@@ -2,6 +2,10 @@ import { dbService } from "../myBase";
 import { doc, deleteDoc, updateDoc } from "firebase/firestore";
 import React, { useState } from "react";
 import styled from "styled-components";
+import { BsXCircle } from "react-icons/bs";
+import { FiEdit3 } from "react-icons/fi";
+import { RiDeleteBin7Line } from "react-icons/ri";
+import { BsCheckCircle } from "react-icons/bs";
 
 const Tweet = ({ nweetObj, isOwner }) => {
   const [editing, setEditing] = useState(false);
@@ -47,15 +51,25 @@ const Tweet = ({ nweetObj, isOwner }) => {
       {editing ? (
         <Content>
           <form onSubmit={onSubmit}>
-            <input
+            <Input
               value={newTweet}
               placeholder="Edit your Tweet"
               required
               onChange={onChange}
             />
           </form>
-          <button onClick={toggleEditing}>Cancle</button>
-          <button onClick={onSubmit}>update Tweet</button>
+          {/* 수정 취소 */}
+          <BsXCircle
+            onClick={toggleEditing}
+            style={{ cursor: "pointer", marginLeft: "30px" }}
+            size={20}
+          />
+          {/* 수정 완료 */}
+          <BsCheckCircle
+            onClick={onSubmit}
+            style={{ cursor: "pointer", marginLeft: "10px" }}
+            size={20}
+          />
         </Content>
       ) : (
         <div>
@@ -63,8 +77,20 @@ const Tweet = ({ nweetObj, isOwner }) => {
             <h4>{nweetObj.text}</h4>
             {isOwner && (
               <>
-                <button onClick={onDelete}>Delete Tweet</button>
-                <button onClick={toggleEditing}>Edit Tweet</button>
+                <Button>
+                  {/* 삭제하기 */}
+                  <RiDeleteBin7Line
+                    onClick={onDelete}
+                    style={{ cursor: "pointer", marginLeft: "30px" }}
+                    size={20}
+                  />
+                  {/* 수정하기 */}
+                  <FiEdit3
+                    onClick={toggleEditing}
+                    style={{ cursor: "pointer", marginLeft: "10px" }}
+                    size={20}
+                  />
+                </Button>
               </>
             )}
           </Content>
@@ -81,10 +107,24 @@ const Content = styled.div`
   background-color: lightblue;
   margin-top: 50px;
   padding-top: 10px;
-  width: 400px;
+  width: 500px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
+`;
+
+const Input = styled.input`
+  width: 300px;
+  height: 30px;
+  border-radius: 10px;
+  margin-right: 10px;
+  border-color: lightgray;
+  margin-bottom: 30px;
+`;
+
+const Button = styled.div`
+  display: flex;
+  justify-content: flex-end;
 `;

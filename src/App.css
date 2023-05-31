@@ -1,6 +1,10 @@
+* {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
 .Navigation div {
-  margin-right: 20px;
-  margin-top: 20px;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 .Home form {
@@ -22,6 +26,10 @@
 .Navigation {
   height: 100%;
 }
+
+/* .Navigation Link {
+  color: black;
+} */
 
 body {
   margin: 0;

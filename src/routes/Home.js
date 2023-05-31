@@ -64,12 +64,13 @@ const Home = ({ userObj }) => {
         <Input
           type="text"
           value={nweet}
-          placeholder="What's on your mind?"
+          placeholder="What is happening?"
           maxLength={120}
           onChange={onChange}
         />
         <Submit type="submit" value="Tweet" />
       </form>
+
       <div key={nweet.id}>
         {nweets.map((nweet) => (
           <Tweet
@@ -85,16 +86,18 @@ const Home = ({ userObj }) => {
 export default Home;
 
 const Input = styled.input`
-  width: 300px;
-  height: 30px;
+  width: 500px;
+  height: 100px;
   border-radius: 10px;
   margin-right: 10px;
-  border-color: lightgray;
+  border-style: none;
+  margin-left: 75px;
 `;
 
 const Submit = styled.input`
-  height: 30px;
-  border-radius: 10px;
-  background-color: skyblue;
-  border-color: white;
+  height: 40px;
+  width: 70px;
+  border-radius: 30px;
+  background-color: #1da1f2;
+  border-style: none;
 `;
