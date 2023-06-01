@@ -60,11 +60,19 @@ const Home = ({ userObj }) => {
 
   return (
     <div className="Home">
-      <form onSubmit={onSubmit}>
+      <ForYou>
+        <div>For You</div>
+        <div>Following</div>
+      </ForYou>
+      <form
+        onSubmit={onSubmit}
+        style={{ borderBottom: " 1px solid lightgray" }}
+      >
         <Input
           type="text"
           value={nweet}
           placeholder="What is happening?"
+          style={{ fontSize: "20px" }}
           maxLength={120}
           onChange={onChange}
         />
@@ -92,12 +100,28 @@ const Input = styled.input`
   margin-right: 10px;
   border-style: none;
   margin-left: 75px;
+  outline: none;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 const Submit = styled.input`
   height: 40px;
-  width: 70px;
+  width: 100px;
   border-radius: 30px;
   background-color: #1da1f2;
   border-style: none;
+  color: white;
+`;
+
+const ForYou = styled.div`
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin-top: 20px;
+  justify-content: space-around;
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 26px;
 `;

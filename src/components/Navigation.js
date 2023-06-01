@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { RiHome7Fill } from "react-icons/ri";
 import { CgProfile } from "react-icons/cg";
+import { IoNotificationsOutline } from "react-icons/io5";
+import { TbMessageCircle } from "react-icons/tb";
+import { CiViewList } from "react-icons/ci";
+import { BsBookmarks } from "react-icons/bs";
 
 const Navigation = ({ userObj }) => {
   return (
@@ -13,9 +17,9 @@ const Navigation = ({ userObj }) => {
             <RiHome7Fill
               size={30}
               color="black"
-              style={{ marginRight: "10px" }}
+              style={{ marginRight: "13px" }}
             />
-            <p>Home</p>
+            <p style={{ fontSize: "23px" }}>Home</p>
           </NavHome>
         </Link>
 
@@ -24,11 +28,39 @@ const Navigation = ({ userObj }) => {
             <CgProfile
               size={30}
               color="black"
-              style={{ marginRight: "10px" }}
+              style={{ marginRight: "13px" }}
             />
-            <p>Profile</p>
+            <p style={{ fontSize: "23px" }}>Profile</p>
           </NavHome>
         </Link>
+        <NavHome>
+          <IoNotificationsOutline
+            size={30}
+            color="black"
+            style={{ marginRight: "13px" }}
+          />
+          <p style={{ fontSize: "23px" }}>Notifications</p>
+        </NavHome>
+        <NavHome>
+          <TbMessageCircle
+            size={30}
+            color="black"
+            style={{ marginRight: "13px" }}
+          />
+          <p style={{ fontSize: "23px" }}>Messages</p>
+        </NavHome>
+        <NavHome>
+          <CiViewList size={30} color="black" style={{ marginRight: "13px" }} />
+          <p style={{ fontSize: "23px" }}>Lists</p>
+        </NavHome>
+        <NavHome>
+          <BsBookmarks
+            size={30}
+            color="black"
+            style={{ marginRight: "13px" }}
+          />
+          <p style={{ fontSize: "23px" }}>Bookmarks</p>
+        </NavHome>
       </Nav>
     </nav>
   );
@@ -40,7 +72,7 @@ const Nav = styled.div`
   display: flex;
   flex-direction: column;
   width: 400px;
-  justify-content: center;
+
   /* background-color: gray; */
 
   /* align-items: center; */
@@ -58,7 +90,10 @@ const NavHome = styled.div`
   flex-direction: row;
   align-items: center;
   color: black;
+  text-align: left;
   justify-content: flex-end;
+
   text-decoration-line: none;
+
   /* background-color: white; */
 `;

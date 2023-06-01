@@ -24,6 +24,7 @@ const Routers = ({ isLoggedIn, userObj }) => {
             <img src={twitter} style={{ width: "60px", height: "60px" }} />
             {/* <ImTwitter size={30} /> */}
           </div>
+
           {isLoggedIn && <Navigation userObj={userObj} />}
         </Bar>
 
@@ -40,6 +41,14 @@ const Routers = ({ isLoggedIn, userObj }) => {
         ) : (
           <Route path="/" element={<Auth />}></Route>
         )}
+
+        <div>
+          <div style={{ borderLeft: "1px solid lightgray", height: "100vh" }}>
+            <Trend>
+              <b>Trend For you</b>
+            </Trend>
+          </div>
+        </div>
       </Naviga>
     </Router>
   );
@@ -50,16 +59,27 @@ export default Routers;
 const Naviga = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  /* align-items: center; */
   /* justify-content: center; */
   height: 100vh;
   /* background-color: skyblue; */
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 1fr 3fr 1fr;
 `;
 
 const Bar = styled.div`
   /* background-color: yellow; */
   height: 100vh;
-  border-right: 1px solid gray;
+  border-right: 1px solid lightgray;
+`;
+
+const Trend = styled.div`
+  background-color: rgb(217, 217, 217);
+  border-radius: 30px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
 `;

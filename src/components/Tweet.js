@@ -104,24 +104,25 @@ export default Tweet;
 
 const Content = styled.div`
   text-align: center;
-  background-color: lightblue;
-  margin-top: 50px;
-  padding-top: 10px;
+  /* background-color: lightblue; */
+  margin-top: 30px;
+  margin-bottom: 30px;
   width: 500px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+  /* border-radius: 10px; */
 `;
 
 const Input = styled.input`
-  width: 300px;
-  height: 30px;
+  width: 400px;
+  height: 50px;
   border-radius: 10px;
   margin-right: 10px;
   border-color: lightgray;
   margin-bottom: 30px;
+  font-size: 15px;
 `;
 
 const Button = styled.div`
